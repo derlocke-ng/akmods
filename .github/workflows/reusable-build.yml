@@ -8,8 +8,8 @@ on:
         type: string
 env:
     IMAGE_BASE_NAME: akmods
-    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
-
+#    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+    IMAGE_REGISTRY: ghcr.io/ublue-os
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.fedora_version }}
   cancel-in-progress: true
