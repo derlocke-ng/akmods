@@ -24,63 +24,63 @@ dnf install -y \
 
 akmods --force --kernels "${KERNEL}" --kmod tuxedo-drivers
 
-modinfo /usr/lib/modules/${KERNEL}/updates//tuxedo_io.ko.xy > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_io.ko.xy > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_keyboard.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_keyboard.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_kbd_backlight.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_kbd_backlight.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_fan_control.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_power_profiles.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_kbd_backlight.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb02_nvidia_power_ctrl.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_sensors.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_fan_control.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_power_profiles.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_power_profiles.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_keyboard.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_kbd_backlight.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb05_ec.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb02_nvidia_power_ctrl.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_wmi_bs.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_wmi_ab.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_sensors.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_nb04_keyboard.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
-
-modinfo /usr/lib/modules/${KERNEL}/updates/tuxedo_compatibility_check.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_sensors.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
 
-modinfo /usr/lib/modules/${KERNEL}/updates/clevo_wmi.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_power_profiles.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
-modinfo /usr/lib/modules/${KERNEL}/updates/clevo_acpi.ko.xz > /dev/null \
-|| (find /var/cache/akmods/openrazer/ -name \*.log -print -exec cat {} \; && exit 1)
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_keyboard.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb05_ec.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_wmi_bs.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_wmi_ab.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_sensors.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_nb04_keyboard.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/tuxedo_compatibility_check.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+
+modinfo /usr/lib/modules/${KERNEL}/extras/clevo_wmi.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
+
+modinfo /usr/lib/modules/${KERNEL}/extras/clevo_acpi.ko.xz > /dev/null \
+|| (find /var/cache/akmods/tuxedo-drivers/ -name \*.log -print -exec cat {} \; && exit 1)
 
 
 
