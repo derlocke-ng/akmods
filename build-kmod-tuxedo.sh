@@ -20,7 +20,8 @@ EOF
 ### BUILD ryzen-smu (succeed or fail-fast with debug output)
 dnf install -y \
     dkms \
-    tuxedo-drivers*.fc${RELEASE}.${ARCH}
+    tuxedo-drivers*.noarch
+#    tuxedo-drivers*.fc${RELEASE}.${ARCH}
 
 akmods --force --kernels "${KERNEL}" --kmod tuxedo-drivers
 
