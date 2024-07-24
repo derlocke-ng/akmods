@@ -7,22 +7,26 @@ KERNEL="$(rpm -q "${KERNEL_NAME}" --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')
 RELEASE="$(rpm -E '%fedora')"
 
 #cp /tmp/ublue-os-akmods-addons/rpmbuild/SOURCES/_copr_ublue-os-akmods.repo /etc/yum.repos.d/
-cat >> /etc/yum.repos.d/tuxedo.repo<< EOF
-[tuxedo]
-name=tuxedo
-baseurl=https://rpm.tuxedocomputers.com/fedora/40/x86_64/base
-enabled=1
-gpgcheck=1
-gpgkey=https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc
-skip_if_unavailable=False
-EOF
+#cat >> /etc/yum.repos.d/tuxedo.repo<< EOF
+#[tuxedo]
+#name=tuxedo
+#baseurl=https://rpm.tuxedocomputers.com/fedora/40/x86_64/base
+#enabled=1
+#gpgcheck=1
+#gpgkey=https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc
+#skip_if_unavailable=False
+#EOF
 
 ### BUILD ryzen-smu (succeed or fail-fast with debug output)
-dnf install -y \
-    dkms \
-    tuxedo-drivers*.noarch
+#dnf install -y \
+#    dkms \
+#    tuxedo-drivers*.noarch
 #    tuxedo-drivers*.fc${RELEASE}.${ARCH}
 
+git clone https://github.com/tuxedocomputers/tuxedo-drivers
+cd tuxedo-drivers
+make install
+## how to create (a)kmods?
 akmods --force --kernels "${KERNEL}" --kmod tuxedo-drivers
 
 modinfo /usr/lib/modules/${KERNEL}/extra/tuxedo_io.ko.xy > /dev/null \
